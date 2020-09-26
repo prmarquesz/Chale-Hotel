@@ -1,0 +1,194 @@
+/* Estrutura do site
+*/
+*{
+	margin: 0; /* zera margin e padding da pg */
+	padding: 0;
+}
+
+body{
+	font-family: Helvetica, "Trebichet MS", sans-serif;
+	background: #fff url(../imagens/bg.png);
+	margin: 15px;
+}
+
+#container-conteudo{ /*container que engloba todo o conteúdo da página*/
+	background: #ede9cc url(../imagens/bg-container.png) top center repeat-y; /*cor de fundo do container/ img de fundo*/
+	margin: 0 auto; /*centraliza o container*/
+	min-width: 740px; /*mínimo que a pg pode reduzir para que o layout n quebre*/
+	max-width: 1180px; /*máximo que a pg pode aumentar para que o layout n quebre*/
+
+}
+
+#topo{
+	position: relative; /*posição relativa p/ que '#area-logo' & '#area-menu' possam sobrepor o '#topo'*/
+	background: #dbcd87;/*cor de fundo do container*/
+	height: 15.4em; /*altura para que possa ser líquido*/
+	min-height: 250px;/*altura mínima que a pg pode ser reduzida implicando em textos*/
+}
+
+#area-logo{
+	position: absolute; /*sobrepõe '#topo'*/
+	background: url(../imagens/topo-imagem-principal.png) no-repeat;
+	width: 100%;/*largura 100% do container onde esta área está contida*/
+	height: 250px;/*altura do container de onde este container está contido*/
+	top: 0; /*encostado tudo em cima*/
+	left: 0; /*encostado tudo a esquerda*/
+	z-index: 1; /*area do logo aparece primeiro e fica por baixo de 'z-index' superiores (area de menu)*/
+}
+
+.logo a{ /*Link e logo da cazinha 'Chalé Hotel'*/
+	position: absolute; 
+	top: 15px; /*configuração de onde o link irá se posicionar no topo*/
+	left: 15px;/*configuração de onde o link irá se posicionar à esquerda*/
+	z-index: 3; /*imagem fica por cima de 'z-index' inferiores*/
+	background: url(../imagens/logo.png) no-repeat;/*imagem de fundo do link*/
+	width: 151px;/*largura da img*/
+	height: 66px;/*altura da img*/
+	text-indent: -9000px;/*texto indenta para sumir quando houver renderização do css*/
+}
+
+#area-menu{
+	position: absolute;/*sobrepõe '#topo'*/
+	background: url(../imagens/topo-imagem-lateral.png);
+	width: 450px; /*largura do container de menu*/
+	height: 250px;/*altura do container de menu*/
+	top: 0;/*configuração da posição do container de menu ao topo*/
+	right: 0;/*configuração da posição do container menu à esquerda*/
+	z-index: 2; /*area de menu fica por cima de divs com 'z-index' inferiores (area do logo) */
+}
+
+#conteudo-menu{ /*Container conteúdo da àrea de menu*/
+	margin-left: 90px;/*espaçamento externo à esquerda do container de area-menu*/
+	margin-right: 15px;/*espaçamento externo à direita do container de area-menu*/
+	padding-top: 15px; /*espaçamento interno do container conteudo-menu*/
+}
+
+#menu-locais{
+	border-bottom: 1px solid #b5ab56;/*borda inferior*/
+	border-top: 1px solid #b5ab56;/*borda superior*/
+	padding-top: 5px; /*espaçamento interno superior da div '#menu-locais'*/
+	padding-bottom: 5px; /*espaçamento interno inferior da div '#menu-locais'*/
+	font-size: 0.7em; /*fonte do texto*/
+	color: #8b8448; /*cor das letras do texto*/
+
+}
+
+#menu-locais .locais{/*container menu-locais*/
+	float: left;/*flutuando a esquerda, necessário limpar o fluxo flutuante p/ ser aplicado*/
+	line-height: 2.1em;/*altura da linha*/
+}
+
+a{
+	text-decoration: none; /*remove underline de links*/
+}
+
+a.reserva{
+	text-transform: uppercase; /*deixa p texto maiúsculo*/
+	background: #a29750; /*cor de fundo do texto*/
+	color: #fff5b0; /*cor da letra do texto*/
+	padding: 5px 10px; /*espaçamento interno do texto*/
+	float: right; /*flutua a dirteita*/
+}
+
+/* Barra de navegação vertical
+*/
+#menu{/*Container menu/ dentro de conteudo-menu*/
+	margin-top: 15px; /*espaçamento interno do container menu/dentro de conteudo-menu*/
+}
+
+ul{
+	list-style: none;/*remove estilo tópico da lista*/
+}
+
+ul#navegacao{/*Lista de navegacao*/
+	float: left; /*flutuando a esquerda*/
+}
+
+ul#navegacao a{
+	text-transform: uppercase; /*itens da lista maiúculo*/
+	font-size: 0.8em;/*tamanho da fonte dos elementos da lista*/
+	padding: 5px; /*espaçamento interno da lista*/
+	color: #6e672c; /*cor do link elemento da lista*/
+	line-height: 30px; /*altura de cada linha/cada elemento da lista*/
+}
+
+ul#navegacao a:hover{
+	background: #fdf6be;/*cor de efeito ao se passar o mouse*/
+}
+
+.depoimento{ /*img de depoimento*/
+	width: 226px; /*largura da img*/
+	height: 164px;/*altura da img*/
+	float: right; /*img flutua à direita*/
+}
+
+/* Área do conteúdos
+************************/
+#area-principal{ /*Área de principal / dentro de container-conteudo*/
+	float: left;/*flutuando à esquerda*/
+	width: 50%;/*layout líquido pegando 50% de largura do container-conteudo*/
+	background: url(../imagens/bg-area-principal.png) top left repeat-x;/*img de fundo*/
+	padding: 15px 0px;/*espaçamento interno*/
+}
+
+#area-lateral{ /*Área lateral / dentro de conteudo*/
+	float: right;/*flutuando à direita*/
+	width: 50%;/*layout líquido pegando 50% de largura do container-conteudo*/
+	background: url(../imagens/bg-area-lateral.png) top left repeat-x;/*img de fundo*/
+	padding: 20px 0px;/*espaçamento interno*/
+}
+
+.conteudo{/*classe conteudo definida na div area-principal/lateral*/
+	margin: 0 auto; /*centraliza*/
+	width: 90%;/*layou líquido*/
+}
+
+#rodape{/*Rodape da página*/
+	clear: both;/*div de rodape como conteudo final, limpando o fluxo flutuante*/
+	padding: 16px; /*espaçamento interno*/
+	background: #fff url(../imagens/bg-rodape.png) repeat-x top;/*cor/img de fundo*/
+	color: #7d7640; /*cor do texto*/
+}
+
+/* Formatações de textos
+*/
+h2{
+	color: #7d7640; /*cor do texto*/
+	font-size: 1.1em; /*tamanho da fonte*/
+	padding: 5px 0px; /*espaçamento interno*/
+}
+
+p{
+	font-size: 1em; /*tamanho da fonte*/
+	margin-bottom: 10px; /*espaçamento externo entre parágrafos*/
+}
+
+/* Formatação da lista
+*/
+#lista-beneficios li{
+	padding: 8px; /*espaçamento interno do elemento listado*/
+	border-bottom: 1px solid #f3efcb; /*borda inferior do elemento listado*/
+	height: 6em; /*altura do elemento*/
+} 
+
+#lista-beneficios li a img{/*formatação da img dentro do elemento li*/
+	float: left;/*flutuando à esquerda*/
+	margin-right: 8px; /*espaçamento externo à direita (entre a img e o texto)*/
+}
+
+#lista-beneficios li a p{
+	font-size: 0.8em; /*tamanho da fonte*/
+	color: #000; /*cor do texto*/
+}
+
+#lista-beneficios li a h3{
+	font-size: 1em; /*tamanho da fonte*/
+	color: #615b2d; /*cor do texto*/
+	padding: 5px 0; /*espaçamento interno*/
+	background: url(../imagens/ornamento.png) no-repeat center right; /*img de fundo*/
+}
+
+#lista-beneficios li:hover{
+	background: #f6f3d6; /*efeito ao passar o mouse*/
+	cursor: pointer; /*maozinha ao passar o mouse*/
+}
